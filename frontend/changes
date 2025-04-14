@@ -1,0 +1,220 @@
+Mobile view{
+    1. remove the arrow btn from the crousals  -- Com
+    2. Align properly teh headings -- Com
+    3. testimonials image
+    4. Blogs also show as crousal on the mobile view  --- Com
+    5. Add addresss on the side bar  --- Complate
+    6. Add z-index on bottom floating btn  ( whatsapp and gotoTop btn ) -- Com
+}
+
+
+
+
+
+
+
+
+// import React, { Suspense, lazy, useState, useEffect } from "react";
+// import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+// import "react-toastify/dist/ReactToastify.css";
+// import ScrollToTopButton from "./Components/Common/ScrollToTopButton";
+// import LoadingScreen from "./Components/Common/Loading";
+// import CustomCursor from "./Components/Common/CustomCursor";
+// import WhatsAppButton from "./Components/Common/WhatsAppButton"; // Import WhatsApp Button
+// import Carrer from "./Pages/Carrer";
+
+// const Home = lazy(() => import("./Pages/Home"));
+// const KnowUs = lazy(() => import("./Pages/KnowUs"));
+// const Services = lazy(() => import("./Pages/Services"));
+// const Contact = lazy(() => import("./Pages/Contact"));
+// const Blog = lazy(() => import("./Pages/Blog"));
+
+// function App() {
+//   const [loading, setLoading] = useState(true);
+
+//   useEffect(() => {
+//     setTimeout(() => setLoading(false), 2000); // Adjust loading duration
+//   }, []);
+
+//   return (
+//     <BrowserRouter>
+//       <CustomCursor />
+//       {loading ? (
+//         <LoadingScreen />
+//       ) : (
+//         <Suspense fallback={<LoadingScreen />}>
+//           <Routes>
+//             <Route path="/" element={<Home />} />
+//             <Route path="/know-us" element={<KnowUs />} />
+//             <Route path="/services" element={<Services />} />
+//             <Route path="/career" element={<Carrer />} />
+//             <Route path="/contact" element={<Contact />} />
+//             <Route path="/blog" element={<Blog />} />
+//           </Routes>
+//           <ScrollToTopButton />
+//           <WhatsAppButton />
+//         </Suspense>
+//       )}
+//     </BrowserRouter>
+//   );
+// }
+
+// export default App;
+
+// import React, { Suspense, lazy, useState, useEffect } from "react";
+// import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+// import "react-toastify/dist/ReactToastify.css";
+// import ScrollToTopButton from "./Components/Common/ScrollToTopButton";
+// import LoadingScreen from "./Components/Common/Loading";
+// import CustomCursor from "./Components/Common/CustomCursor";
+// import WhatsAppButton from "./Components/Common/WhatsAppButton"; // Import WhatsApp Button
+// import Carrer from "./Pages/Carrer";
+// import Login from "./Dashboard/Login";
+// import Dashboard from "./Pages/Dashboard";
+// import NotFoundPage from "./Components/Common/NotFoundPage";
+
+// const Home = lazy(() => import("./Pages/Home"));
+// const KnowUs = lazy(() => import("./Pages/KnowUs"));
+// const Services = lazy(() => import("./Pages/Services"));
+// const Contact = lazy(() => import("./Pages/Contact"));
+// const Blog = lazy(() => import("./Pages/Blog"));
+
+// function App() {
+//   const [auth, setAuth] = useState(localStorage.getItem("authToken") ? true : false);
+//   const [loading, setLoading] = useState(true);
+
+//   useEffect(() => {
+//     setTimeout(() => setLoading(false), 2000); // Adjust loading duration
+//   }, []);
+
+//   return (
+//     <BrowserRouter>
+//       {/* <CustomCursor /> */}
+//       {loading ? (
+//         <LoadingScreen />
+//       ) : (
+//         <Suspense fallback={<LoadingScreen />}>
+//           <Routes>
+//             <Route path="/" element={<Home />} />
+//             <Route path="/know-us" element={<KnowUs />} />
+//             <Route path="/services" element={<Services />} />
+//             <Route path="/career" element={<Carrer />} />
+//             <Route path="/contact" element={<Contact />} />
+//             <Route path="/blog" element={<Blog />} />
+//             <Route path="/login" element={<Login setAuth={setAuth} />} />
+//            <Route path="/dashboard" element={auth ? <Dashboard /> : <Navigate to="/login" replace />} />
+//            <Route path="*" element={<NotFoundPage />} /> {/* 404 Page */}
+//           </Routes>
+//           <ScrollToTopButton />
+//           <WhatsAppButton />
+//         </Suspense>
+//       )}
+//     </BrowserRouter>
+//   );
+// }
+
+// export default App;
+
+
+
+
+// import React, { Suspense, lazy, useState, useEffect } from "react";
+// import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+// import "react-toastify/dist/ReactToastify.css";
+// import ScrollToTopButton from "./Components/Common/ScrollToTopButton";
+// import LoadingScreen from "./Components/Common/Loading";
+// import WhatsAppButton from "./Components/Common/WhatsAppButton";
+// import Navbar from "./Components/Common/Navbar"; // Import Navbar
+// import Footer from "./Components/Common/Footer"; // Import Footer
+// import Carrer from "./Pages/Carrer";
+// import Login from "./Dashboard/Login";
+// import Dashboard from "./Pages/Dashboard";
+// import NotFoundPage from "./Components/Common/NotFoundPage";
+// import ScrollToTop from "./Components/Common/ScrollToTop";
+// import CustomCursor from "./Components/Common/CustomCursor";
+// import MessageBox from "./Components/Common/MessageBox";
+
+// const Home = lazy(() => import("./Pages/Home"));
+// const KnowUs = lazy(() => import("./Pages/KnowUs"));
+// const Services = lazy(() => import("./Pages/Services"));
+// const Contact = lazy(() => import("./Pages/Contact"));
+// const Blog = lazy(() => import("./Pages/Blog"));
+
+// function App() {
+//   const [auth, setAuth] = useState(
+//     localStorage.getItem("authToken") ? true : false
+//   );
+//   const [loading, setLoading] = useState(true);
+//   const location = useLocation();
+
+//   useEffect(() => {
+//     setTimeout(() => setLoading(false), 2000);
+//   }, []);
+
+//   return (
+//     <BrowserRouter>
+//       {/* <CustomCursor /> */}
+//       <ScrollToTop />
+//       {loading ? (
+//         <LoadingScreen />
+//       ) : (
+//         <Suspense fallback={<LoadingScreen />}>
+//           <Routes>
+//             <Route
+//               path="/dashboard"
+//               element={auth ? <Dashboard /> : <Navigate to="/login" replace />}
+//             />
+//             <Route
+//               path="*"
+//               element={
+//                 <>
+//                   <Navbar />
+//                   <Routes>
+//                     <Route path="/" element={<Home />} />
+//                     <Route path="/know-us" element={<KnowUs />} />
+//                     <Route path="/services" element={<Services />} />
+//                     <Route path="/career" element={<Carrer />} />
+//                     <Route path="/contact" element={<Contact />} />
+//                     <Route path="/blog" element={<Blog />} />
+//                     <Route
+//                       path="/login"
+//                       element={<Login setAuth={setAuth} />}
+//                     />
+//                     <Route path="*" element={<NotFoundPage />} />
+//                   </Routes>
+//                   <Footer />
+//                   {/* Show MessageBox only on Home Page */}
+//                   {location.pathname === "/" && <MessageBox />}
+//                 </>
+//               }
+//             />
+//           </Routes>
+//           <ScrollToTopButton />
+//           <WhatsAppButton />
+//         </Suspense>
+//       )}
+//     </BrowserRouter>
+//   );
+// }
+
+// export default App;
+
+
+
+                    {/* <Link
+                      to={item.to}
+                      className="relative group transition-transform duration-300"
+                    >
+                      <span
+                        className={`group-hover:text-secoundary ${
+                          isActive ? "text-secoundary" : ""
+                        }`}
+                      >
+                        {item.label}
+                      </span>
+                      <span
+                        className={`absolute left-0 -bottom-1 h-[2px] bg-secoundary transition-all duration-300 ${
+                          isActive ? "w-full" : "w-0 group-hover:w-full"
+                        }`}
+                      />
+                    </Link> */}
